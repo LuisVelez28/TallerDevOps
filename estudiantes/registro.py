@@ -42,6 +42,22 @@ def mostrar_estudiantes_alfabeticamente(estudiantes):
         nombre = e['nombre'].ljust(max_longitud)
         nota = str(e['nota']).rjust(4)
         print("|" + nombre + "| " + nota + " |")
+        
+def mostrar_promedio(estudiantes):
+    suma_notas = 0
+    contador = 0
+    
+    for alumno in estudiantes:
+        suma_notas = suma_notas + alumno['nota']
+        contador = contador + 1
+    
+    if contador == 0:
+        print("No hay estudiantes para calcular el promedio")
+        return
+    
+    promedio = suma_notas / contador
+    print("El promedio de notas es: " + format(promedio, ".2f"))
 
 estudiantes = cargar_estudiantes('estudiantes.csv')
 mostrar_estudiantes_alfabeticamente(estudiantes)
+mostrar_promedio(estudiantes)
