@@ -57,7 +57,3 @@ def mostrar_promedio(estudiantes):
     
     promedio = suma_notas / contador
     print("El promedio de notas es: " + format(promedio, ".2f"))
-
-estudiantes = cargar_estudiantes('estudiantes.csv')
-mostrar_estudiantes_alfabeticamente(estudiantes)
-mostrar_promedio(estudiantes)
